@@ -1,28 +1,72 @@
 package org.example;
+
+import java.util.Arrays;
+import java.util.List;
+
 public class PriceCalculator {
 
-    public double calculate(
-            double[] prices,
-            int[] qty,
-            String customerType,
-            String code) {
+    public void calculate() {
 
-        double total = 0;
+        // Item prices
+        List<Double> prices = Arrays.asList(
+                100.0,
+                50.0,
+                20.0);
 
-        for (int i = 0; i < prices.length; i++) {
-            total += prices[i] * qty[i];
-        }
+        // Quantities
+        List<Integer> quantities = Arrays.asList(
+                2,
+                1,
+                3);
 
-        if (code.equals("SAVE10")) {
-            total = total - total * 0.1;
-        }
+        // Customer
+        Customer customer = new Customer(
+                "Soufiane",
+                "VIP");
 
-        if (customerType.equals("VIP")) {
-            total = total - 20;
-        }
+        // Discount code
+        String code = "SAVE10";
 
-        total = total + total * 0.15;
+        // Create order
+        Order order = new Order(prices, quantities);
 
-        return total;
+        // Calculate subtotal
+        double subtotal = order.getSubtotal();
+
+        // Apply discount
+        DiscountService discountService = new DiscountService();
+
+        double discount = discountService.applyDiscount(
+                subtotal,
+                code,
+                customer.getType());
+
+        // Price after discount
+        double afterDiscount = subtotal - discount;
+
+        // Tax calculation
+        TaxCalculator taxCalculator = new TaxCalculator();
+
+        double tax = taxCalculator.calculateTax(afterDiscount);
+
+        // Final price
+        double finalPrice = afterDiscount + tax;
+
+        // Display results
+        System.out.println("===== ORDER SUMMARY =====");
+
+        System.out.println("Customer: " + customer.getName());
+
+        System.out.println("Customer Type: " + customer.getType());
+
+        System.out.println("Subtotal: $" + subtotal);
+
+        System.out.println("Discount: $" + discount);
+
+        System.out.println("After Discount: $" + afterDiscount);
+
+        System.out.println("Tax: $" + tax);
+
+        System.out.println("Final Price: $" + finalPrice);
     }
 }
