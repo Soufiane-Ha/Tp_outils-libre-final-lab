@@ -64,3 +64,13 @@ warning: in the working copy of 'plugin/src/test/java/org/example/PricingEngineG
  create mode 100644 plugin/src/test/java/org/example/PricingEngineGradlePluginTest.java
  create mode 100644 settings.gradle
  ```
+
+### Terminal command Gradle Test 
+
+ ```PowerShell
+PS C:\Users\ELITE COMPUTER\Desktop\outils-libre-final-lab> gradle test
+Starting a Gradle Daemon, 3 incompatible and 3 stopped Daemons could not be reused, use --status for details
+
+BUILD SUCCESSFUL in 29s
+6 actionable tasks: 5 executed, 1 up-to-date
+ ```
