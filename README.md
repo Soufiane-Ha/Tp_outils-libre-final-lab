@@ -1,4 +1,6 @@
 ### Terminal command  Gradle
+
+```PowerShell
 PS C:\Users\ELITE COMPUTER\Desktop\outils-libre-final-lab> gradle init
 Starting a Gradle Daemon (subsequent builds will be faster)
 
@@ -32,7 +34,12 @@ BUILD SUCCESSFUL in 3m 5s
 1 actionable task: 1 executed
 PS C:\Users\ELITE COMPUTER\Desktop\outils-libre-final-lab> 
 
+```
+
 ### Terminal command Git 
+
+
+```PowerShell
 PS C:\Users\ELITE COMPUTER\Desktop\outils-libre-final-lab> git init
 Initialized empty Git repository in C:/Users/ELITE COMPUTER/Desktop/outils-libre-final-lab/.git/
 PS C:\Users\ELITE COMPUTER\Desktop\outils-libre-final-lab> git add .
@@ -56,3 +63,4 @@ warning: in the working copy of 'plugin/src/test/java/org/example/PricingEngineG
  create mode 100644 plugin/src/main/java/org/example/PricingEngineGradlePlugin.java
  create mode 100644 plugin/src/test/java/org/example/PricingEngineGradlePluginTest.java
  create mode 100644 settings.gradle
+ ```
